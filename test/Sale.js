@@ -1,5 +1,5 @@
 const Sale = artifacts.require("./Sale");
-const MyToken = artifacts.require("./MyToken");
+const Token = artifacts.require("./Token");
 
 contract("Sale", async (accounts) => {
   let saleInstance;
@@ -24,7 +24,7 @@ contract("Sale", async (accounts) => {
   // testing buying tokens
   it("facilitates token buying", async () => {
     // grab token instance
-    tokenInstance = await MyToken.deployed();
+    tokenInstance = await Token.deployed();
     // grab sale instance
     saleInstance = await Sale.deployed();
     // provision 75% of tokens to the token sale contract
@@ -94,7 +94,7 @@ contract("Sale", async (accounts) => {
   // testing ending the token sale
   it("ends token sale", async () => {
     // instances
-    let tokenInstance = await MyToken.deployed();
+    let tokenInstance = await Token.deployed();
     let saleInstance = await Sale.deployed();
     // try to end the token sale from a non admin account
     try {

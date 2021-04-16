@@ -1,23 +1,23 @@
-const MyToken = artifacts.require("./MyToken.sol");
+const Token = artifacts.require("./Token.sol");
 
-contract("MyToken", async (accounts) => {
+contract("Token", async (accounts) => {
   let tokenInstance;
   // testing the token information
   it("initializes the contract with the correct values", async () => {
-    let tokenInstance = await MyToken.deployed();
+    let tokenInstance = await Token.deployed();
     // testing the name
     let name = await tokenInstance.name();
-    assert.equal(name, "MyToken", "has the correct name");
+    assert.equal(name, "TU Coin", "has the correct name");
     // testing the symbol
     let symbol = await tokenInstance.symbol();
-    assert.equal(symbol, "Symbol", "has the correct symbol");
+    assert.equal(symbol, "TUC", "has the correct symbol");
     // testing the standard
     let standard = await tokenInstance.standard();
-    assert.equal(standard, "MyToken v1.0", "has the correct standard");
+    assert.equal(standard, "TU Coin v1.0", "has the correct standard");
   });
   // testing the total supply and the admin balance
   it("allocates the total supply upon deployment", async () => {
-    let tokenInstance = await MyToken.deployed();
+    let tokenInstance = await Token.deployed();
     // test total supply
     let totalSupply = await tokenInstance.totalSupply();
     assert.equal(
@@ -35,7 +35,7 @@ contract("MyToken", async (accounts) => {
   });
   // testing the transfer ownership
   it("transfer token ownership", async () => {
-    let tokenInstance = await MyToken.deployed();
+    let tokenInstance = await Token.deployed();
     // test if the tokens transfered are larger than the sender's balance
     try {
       await tokenInstance.transfer.call(accounts[1], 9999999999);
@@ -95,7 +95,7 @@ contract("MyToken", async (accounts) => {
   });
   // testing the delegated transfer approval
   it("approves tokens for delegated transfer", async () => {
-    let tokenInstance = await MyToken.deployed();
+    let tokenInstance = await Token.deployed();
     // test the success of the transfer
     let success = await tokenInstance.approve.call(accounts[1], 100);
     assert.equal(success, true, "it returns true");
@@ -131,7 +131,7 @@ contract("MyToken", async (accounts) => {
   });
   // handling the delegated transfer
   it("handles the delegated transfer", async () => {
-    let tokenInstance = await MyToken.deployed();
+    let tokenInstance = await Token.deployed();
     // accounts
     let fromAccount = accounts[2];
     let toAccount = accounts[3];

@@ -3,11 +3,11 @@
 pragma solidity >=0.4.22 <0.8.0;
 
 // my contract
-contract MyToken {
+contract Token {
     // attributes
-    string public name = "MyToken"; // name of the token
-    string public symbol = "Symbol"; // symbol of the token
-    string public standard = "MyToken v1.0"; // standard of the token
+    string public name = "TU Coin"; // name of the token
+    string public symbol = "TUC"; // symbol of the token
+    string public standard = "TU Coin v1.0"; // standard of the token
     uint256 public totalSupply; // total supply of coins
 
     // transfer event

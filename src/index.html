@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Token ICO Sale</title>
+    <link rel="icon" type="image/png" href="./images/coin.png" />
+    <!-- *FONT AWESOME -->
+    <script
+      src="https://kit.fontawesome.com/48b83cc38d.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- *GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <!-- *STYLESHEET -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- *CONTAINER -->
+    <div class="container">
+      <!-- *NAVBAR -->
+      <div class="navbar">
+        <div class="logo">
+          <img src="./images/coin.png" alt="coin logo" />
+          <h1>TU Coin</h1>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="#" id="home">Home</a></li>
+            <li><button id="buy">Buy Tokens</button></li>
+          </ul>
+        </div>
+      </div>
+      <!-- *MARGIN FIX -->
+      <div class="fix"></div>
+      <!-- *HOME -->
+      <div class="home">
+        <h1 class="title">
+          Welcome To The Sale Page For Tishreen University Coin
+        </h1>
+        <div class="description">
+          <div class="image">
+            <img src="./images/coin.png" alt="coin logo" />
+          </div>
+          <div class="content">
+            <p>
+              TU Coin is a token based on the ERC20 standard which uses the
+              Ethereum Blockchain to serve it.
+            </p>
+            <span>Tools used:</span>
+            <ul>
+              <li>Ethereum</li>
+              <li>Rinkeby Testing Network</li>
+              <li>MetaMask Extension</li>
+              <li>Truffle</li>
+            </ul>
+          </div>
+        </div>
+        <div class="notice">
+          <h2><i class="fa fa-info-circle"></i>Notice:</h2>
+          <p>This is a test project only for now</p>
+        </div>
+      </div>
+      <!-- *BUY SECTION -->
+      <div class="buy">
+        <h1 class="title">Purchase Page</h1>
+        <div class="notice" id="metamask-notice">
+          <h2><i class="fa fa-info-circle"></i>Notice:</h2>
+          <p>
+            This token sale uses the Rinkeby Test Network with fake ether. Use a
+            browser extension like MetaMask to connect to the test network and
+            participate in the ICO.
+          </p>
+        </div>
+        <!-- *LOADING DATA -->
+        <div class="loading">
+          <p>Please wait a moment</p>
+          <div class="dots">
+            <div class="dot dot1"></div>
+            <div class="dot dot2"></div>
+            <div class="dot dot3"></div>
+          </div>
+        </div>
+        <div class="info">
+          <div class="token-info">
+            <h1>Token Price: <span id="price"></span> ether</h1>
+            <h1>Tokens Remaining: <span id="remaining"></span> TUC</h1>
+            <h1>Tokens Sold: <span id="sold"></span> TUC</h1>
+          </div>
+          <form onsubmit="App.buyTokens(); return false;" id="buy-form">
+            <label for="numberOfTokens">Number of tokens:</label>
+            <div class="form-inputs">
+              <input
+                type="number"
+                id="numberOfTokens"
+                name="number"
+                value="1"
+                min="1"
+                pattern="[0-9]"
+              />
+              <button>Buy</button>
+            </div>
+          </form>
+        </div>
+        <div class="account">
+          <h1>Your Account</h1>
+          <h2>Public key: <span id="publicKey"></span></h2>
+          <h2>Number of TU Coins owned: <span id="balance"></span> TUC</h2>
+        </div>
+      </div>
+      <footer>TUC 2021 &copy; Copyrights</footer>
+    </div>
+    <!-- *SCRIPTS -->
+    <script src="./js/web3.min.js"></script>
+    <script src="./js/truffle-contract.min.js"></script>
+    <script src="./js/pages.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
