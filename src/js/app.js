@@ -64,7 +64,7 @@ App = {
       }
     );
     saleEvent.watch((error, event) => {
-      console.log("event triggered: ", event);
+      // console.log("event triggered: ", event);
       App.render();
     });
   },
@@ -143,10 +143,12 @@ App = {
       value: numberOfTokens * App.tokenPrice,
       gas: 500000, // gas limit
     });
+    console.log(result);
     // show content
     showContent();
     // reset the form
     document.getElementById("buy-form").reset();
+    // wait for sell event
   },
 };
 // initialize the app on page load
@@ -184,3 +186,11 @@ function showContent() {
   info.style.display = "flex";
   buyForm.style.display = "flex";
 }
+// offline event listener
+window.addEventListener("offline", () => {
+  alert("check your internet connection");
+});
+// online event listener
+window.addEventListener("online", () => {
+  alert("your connection has been restored");
+});
