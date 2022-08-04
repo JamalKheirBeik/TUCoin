@@ -4,7 +4,7 @@
 
 # Tools used
 
-## 1. Ethereum lockchain
+## 1. Ethereum Blockchain
 
 ## 2. Truffle
 
